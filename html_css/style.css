@@ -1,0 +1,26 @@
+
+body {
+    font-size: 14px;
+    color: navy;
+}
+
+h1 {
+    color: #ffc;
+    background-color: #009;
+
+}
+
+h2 {
+  text-decoration: line-through;
+  text-transform: none;
+  font-size: 1.5em;
+  background-color: #ccc;
+  margin: 20px;
+  padding: 40px;
+  border-style: dashed;
+  border-style: dashed;
+  border-width: 3px;
+  border-left-width: 10px;
+  border-right-width: 10px;
+  border-color: red;
+}
