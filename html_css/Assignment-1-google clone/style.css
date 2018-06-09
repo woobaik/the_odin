@@ -1,0 +1,22 @@
+
+body {
+  margin: 15px 15px;
+}
+
+nav {
+  
+}
+
+.nav-left, .nav-right {
+
+}
+
+.nav-left ul li {
+  /* display: inline; */
+  float: left
+}
+
+.nav-right ul li {
+  /* display: inline; */
+  float: right;
+}
