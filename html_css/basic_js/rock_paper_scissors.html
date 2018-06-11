@@ -10,16 +10,15 @@
         randomNumber =  Math.floor(Math.random() * 3);
         switch ( randomNumber ) {
           case 0:
-          return 'rock';
-          break;
+            return 'rock';
+            break;
 
           case 1:
-          return 'scissors';
-          break ;
+            return 'scissors';
+            break ;
 
           default:
-          return 'paper';
-          break;
+            return 'paper';
         }
       }
 
@@ -32,22 +31,22 @@
         else if (caseInsPlayerSelection === 'rock') {
           switch (computerSelection) {
               case 'paper':
-              return 'Man, You lost!';
-              break;
+                return 'Man, You lost!';
+                break;
 
               default:
-              return 'Man! You won!'
+                return 'Man! You won!'
           }
         }
 
         else if (caseInsPlayerSelection === 'paper') {
           switch (computerSelection) {
             case 'rock':
-            return 'Man You Lost!'
-            break;
+              return 'Man You Lost!'
+              break;
 
             default:
-            return 'Man You Won!'
+              return 'Man You Won!'
           }
         }
 
@@ -58,7 +57,7 @@
                 break;
 
               default:
-              return 'Man You Won'
+                return 'Man You Won'
 
             }
           }
