@@ -64,9 +64,18 @@
           }
       }
 
-      const playerSelection = 'rock';
-      const computerSelection = computerPlay()
-      console.log(playRound(playerSelection, computerSelection))
+
+      function game() {
+        let gamePlay = 0
+        while (gamePlay < 5) {
+          playerSelection = window.prompt('Your Move!!')
+          computerSelection = computerPlay();
+          console.log(playRound(playerSelection, computerSelection));
+          gamePlay++;
+        }
+      }
+
+      game();
     </script>
   </body>
 </html>
