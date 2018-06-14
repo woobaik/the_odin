@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      div {
+        background-color: grey;
+        border: 5px solid black;
+        width: auto;
+        height: 25px;
+        display: grid;
+      }
+      .container {
+        background-color: green;
+        border: 5px solid pink;
+
+      }
+    </style>
+    <title>Etch-A-Sketch</title>
+  </head>
+  <body>
+    <div class="container">
+
+    </div>
+
+
+    <script>
+      const container = document.querySelector('.container');
+
+      function createGrid(numBoxes=16) {
+        let columns = `repeat(${numBoxes}, 1fr)`;
+        let rows = `repeat(${numBoxes}, 1fr)`;
+
+        container.style.gridTemplateColumns = columns;
+        container.style.gridTemplateRows = rows;
+
+        let totalSquares = numBoxes * numBoxes;
+
+        for (let i = 0; i < totalSquares; i ++) {
+          let box = document.createElement('div');
+          box.setAttribute('class', 'box');
+          container.appendChild(box);
+          box.style.border = "1px solid black";
+          box.addEventListener('mouseover', makeDarker);
+        }
+      }
+
+      function makeDarker() {
+        let currentOp = this.style.opacity;
+        let newOp = Number(currentOp) + 0.1;
+        this.style.opacity = newOp;
+      }
+
+      createGrid();
+    </script>
+  </body>
+</html>
