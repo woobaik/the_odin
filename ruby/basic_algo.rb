@@ -20,14 +20,11 @@ end
 # 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 #
 # By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
-def fibonacci(num)
-  i = 1
-  j = 2
-  result = []
-  if num == 1
-    return result << i
-  elsif num == 2
-    return result << i, j
+def fib
+  arr = [1,2]
+  while arr.last < 4_000_000
+    arr << arr[-2] + arr[-1]
   end
-  result
+  arr[0..-2].reduce(:+)
+
 end
