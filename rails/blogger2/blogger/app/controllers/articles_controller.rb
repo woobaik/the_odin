@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find_by(id: params[:id])
+    find_article
   end
 
   def new
@@ -20,6 +20,27 @@ class ArticlesController < ApplicationController
       render 'new'
     end
   end
+
+  def edit
+    find_article
+  end
+
+  def update
+    find_article
+    if @article.update(article_params)
+      flash[:notice] = "Article #{@article.title} is updated!"
+      redirect_to article_path(@article)
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    find_article
+    @article.destroy
+  end
+
+
 
 
 end
