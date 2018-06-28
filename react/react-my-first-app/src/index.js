@@ -4,18 +4,31 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
+
+const Welcome = ((props) => {
+  return(
+  <h4>Welcome to my site! {props.firstName}!</h4>
+  )
+});
+
+
+
 const Element = (() => {
-  let name = {
-    first: "Chris",
-    last: "Baik"
-  }
+  const nameArray = ["Haram", "JoungAnn", "Chicken", "Ryu", "Yang", "Lee"]
   return (
     <div>
-      <h3 className="big red">Hello there {name.first} {name.last}</h3>
-      <h5>Hello again</h5>
+      <Welcome firstName="Christ" />
+      <ul>
+        {nameArray.map(name=>
+          <li>{name}</li>
+        )};
+
+      </ul>
     </div>
   )
 });
 
-ReactDOM.render(<Element />,
+
+ReactDOM.render(
+  <Element />,
   document.getElementById('root'));
