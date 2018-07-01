@@ -33,5 +33,5 @@ const Element = (() => {
 
 
 ReactDOM.render(
-  <Element />,
+  <App />,
   document.getElementById('root'));
