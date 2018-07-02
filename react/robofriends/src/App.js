@@ -36,5 +36,13 @@ class App extends Component {
     );
   }
 }
+// it won't work because functional declation is not appropriate for interaction between components.
+// const App = () => {
+//   return (
+//     <div><input onClick={this.eventHander}></div>
+//   )
+//
+//
+// }
 
 export default App;
