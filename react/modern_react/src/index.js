@@ -12,15 +12,17 @@ class App extends Component {
     super(prop);
 
     this.state = { news : JSON }
+  }
 
-
+  fliterNews(keywords) {
+    console.log(keywords)
   }
 
 
   render() {
     return (
       <div>
-        <Header />
+        <Header newsSearch={keywords => this.filterNews(keywords)}/>
         <NewsList news={this.state.news} />
       </div>
     );
