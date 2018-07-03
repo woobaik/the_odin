@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import App from './App';
+import Card from './Card';
 // import registerServiceWorker from './registerServiceWorker';
 
 
@@ -13,25 +13,5 @@ const Welcome = ((props) => {
 
 
 
-const Element = (() => {
-  const nameArray = ["Haram", "JoungAnn", "Chicken", "Ryu", "Yang", "Lee"];
-  const nameMapper = (() =>
-    nameArray.map(name=>
-      <li>{name}</li>
-    )
-  );
-  return (
-    <div>
-      <Welcome firstName="Christ" />
-      <ul>
-        {nameMapper()}
-
-      </ul>
-    </div>
-  )
-});
-
-
-ReactDOM.render(
-  <App />,
+ReactDOM.render(< Card />,
   document.getElementById('root'));
