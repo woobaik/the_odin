@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+header {
+  background: #03a9f5;
+  text-align: center
+}
+
+header input {
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+
+.logo {
+  color: white;
+  font-size: 40px;
+  font-family: fantasy;
+}
