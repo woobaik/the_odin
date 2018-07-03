@@ -3,7 +3,6 @@ import React from 'react';
 const Card = (props) => {
   return (
     <div>
-      <h1>Robo Friend</h1>
       <img alt="card-pic" src={`https://robohash.org/${props.id}?200x200`} />
 
       <div>
