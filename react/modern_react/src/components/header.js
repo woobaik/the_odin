@@ -6,6 +6,7 @@ class Header extends Component {
     super(props)
 
     this.state = {
+      title: 'You typed',
       keywords: ''
     }
   }
