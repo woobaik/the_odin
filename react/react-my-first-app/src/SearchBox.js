@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
 class SearchBox extends Component {
-
+ g
   render() {
     return(
       <div>
-        <input />
+        <input
+          type="search"
+          placeholder="search robots"/>
       </div>
     )
   }
