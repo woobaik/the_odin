@@ -21,6 +21,8 @@ function cleanString(str) {
     .join('');
 }
 
+str.replace(/[^\w]\g/, '').toLowerCase().split('').sort().join('');
+
 module.exports = anagrams;
 
 // function anagrams(stringA, stringB) {
