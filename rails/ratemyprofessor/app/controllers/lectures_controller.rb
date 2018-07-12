@@ -1,5 +1,7 @@
 class LecturesController < ApplicationController
+
   def index
+    @lectures = Lecture.all
   end
 
   def new
@@ -19,6 +21,6 @@ class LecturesController < ApplicationController
   end
 
   def destroy
-  end 
+  end
 
 end
