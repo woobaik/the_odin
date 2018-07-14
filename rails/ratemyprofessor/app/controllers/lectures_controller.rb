@@ -17,6 +17,7 @@ class LecturesController < ApplicationController
     else
       flash.now[:notice] = 'Ooops, there was a problem creating lecture list'
       render :lecture => :new
+    end 
   end
 
   def edit
