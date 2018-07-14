@@ -1,0 +1,10 @@
+<h1>Create Lecture</h1>
+
+<%= form_for(@lecture) do |f| %>
+  <%= f.text_field :lecture_name%><br>
+  <%= f.text_field :semester %>
+  <%= f.text_field :credits %>
+  <%= f.submit %>
+<% end %>
+
+lecture_name,  semester credits
