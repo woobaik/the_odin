@@ -17,7 +17,7 @@ class LecturesController < ApplicationController
     else
       flash.now[:notice] = 'Ooops, there was a problem creating lecture list'
       render :lecture => :new
-    end 
+    end
   end
 
   def edit
@@ -25,10 +25,18 @@ class LecturesController < ApplicationController
   end
 
   def update
+    @lecture = Lecture.find_by(id: params[:id])
+    if @lecture.update
+      flash[:notice] = "Your Lecture is updated"
+    else
+      flash.now[:notice] = "FAiled!"
+    end
 
   end
 
   def destroy
+    @lecture = Lecture.find_by(id: params[:id])
+    @lecture.destroy
   end
 
 
