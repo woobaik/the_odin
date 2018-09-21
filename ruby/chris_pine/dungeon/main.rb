@@ -6,7 +6,10 @@ class Dungeon
     @rooms = {}
   end
 
-end
+  def add_room(reference, name, description, connections)
+    @rooms[reference] = Room.new(reference, name, description, connections)
+  end
+
 
 class Player
   attr_accessor :name, :location
@@ -27,3 +30,6 @@ class Room
   end
 
 end
+
+player = Player.new("haram")
+Dungeon.new(player)
