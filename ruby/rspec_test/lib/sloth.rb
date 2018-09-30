@@ -14,4 +14,5 @@ class Sloth
   def drink(beverage, amount)
     @drinks[beverage] = amount
   end
+  
 end
