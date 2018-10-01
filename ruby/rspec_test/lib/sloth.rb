@@ -11,8 +11,4 @@ class Sloth
     @foods << food
   end
 
-  def drink(beverage, amount)
-    @drinks[beverage] = amount
-  end
-  
 end
