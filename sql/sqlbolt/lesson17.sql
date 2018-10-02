@@ -1,0 +1,6 @@
+ALTER TABLE movies
+ADD Aspect_ratio FLOAT AFTER year;
+
+ALTER TABLE movies
+ADD Language TEXT
+DEFAULT  "ENGLISH"
