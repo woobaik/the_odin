@@ -7,6 +7,15 @@
 </p>
 <br>
 <p>
+  <%= render partial: 'comments/form' %>
+</p>
+
+<p>
+  <h3>Comments (<%= @article.comments.count %>)</h3>
+  <%= render partial: 'articles/comment', collection: @article.comments %>
+</p>
+
+<p>
 <%= link_to "Modify This Article", edit_article_path(@article) %> <br>
 <%= link_to "Delete This Article", article_path(@article), method: :delete, data: {confirm: "Are you sure?"}%> <br>
 <%= link_to "<<Back to Article List", articles_path %>
