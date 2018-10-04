@@ -1,6 +1,13 @@
 <h1>Show Article</h1>
-<ul>
-  <h4> <%= @article.title %> </h4> <br>
-  <p> <%= @article.body %> </p>
-</ul>
+<p>
+  <ul>
+    <h4> <%= @article.title %> </h4> <br>
+    <p> <%= @article.body %> </p>
+  </ul>
+</p>
+<br>
+<p>
+<%= link_to "Modify This Article", edit_article_path(@article) %> <br>
+<%= link_to "Delete This Article", article_path(@article), method: :delete, data: {confirm: "Are you sure?"}%> <br>
 <%= link_to "<<Back to Article List", articles_path %>
+</p>
