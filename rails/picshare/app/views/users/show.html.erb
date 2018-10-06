@@ -3,5 +3,12 @@
   <%= @user.username %>
 </p>
 
+<p>
+  <% @user.posts.each do |post| %>
+    <!-- add image here -->
+    <%= post.caption %><br>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
