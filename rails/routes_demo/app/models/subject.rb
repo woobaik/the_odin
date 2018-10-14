@@ -6,5 +6,5 @@ class Subject < ApplicationRecord
   scope :sorted, lambda { order("position ASC")}
   scope :newest_first, lambda { order("position DESC")}
   scope :search, lambda {|query| where(["name LIKE ?", "%#{query}%"])}
-  scope :rails, lambda { where("name LIKE ?", "%rails%")}
+  
 end
