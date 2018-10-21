@@ -1,2 +1,36 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<!-- <form action="/users" method="post" accept-charset="utf-8">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label for="username">Username</label><br>
+  <input type="text" name="user[username]"><br>
+
+  <label for="email">email</label><br>
+  <input type="text" name="user[email]"><br>
+
+  <label for="password">Password</label><br>
+  <input type="password" name="user[password]"><br>
+
+
+  <input type="submit" value="Submit">
+</form> -->
+<!--
+<%= form_tag '/users'%>
+<%= label_tag 'username', "UserName" %><br>
+<%= text_field_tag 'user[username]' %><br>
+<%= label_tag 'email', "E-mail" %><br>
+<%= text_field_tag 'user[email]' %><br>
+<%= label_tag 'password', "Password" %><br>
+<%= password_field_tag 'user[password]' %><br>
+<%= submit_tag "Sign Up" %>
+<%= User.all.count %> -->
+
+
+<%= form_for(@user) do |f| %>
+<%= f.label "username" %><br>
+<%= f.text_field :username  %><br>
+<%= f.label "email" %><br>
+<%= f.text_field :email  %><br>
+<%= f.label "password" %><br>
+<%= f.password_field :password  %><br>
+<%= f.submit "Sign Up!" %>
+
+<% end %>
