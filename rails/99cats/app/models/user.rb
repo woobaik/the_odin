@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 
+  has_many :cats
   # create_table "users", force: :cascade do |t|
   #   t.string "password_digest", null: false
   #   t.string "session_token", null: false
