@@ -162,3 +162,72 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 37ms (Views: 16.6ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (49.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2463861850951678800)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20181024063646)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (14.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying, "password_digest" character varying, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20181024063646_create_users.rb:3
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/migrate/20181024063646_create_users.rb:10
+  [1m[36mActiveRecord::SchemaMigration Create (5.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20181024063646"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (1.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-10-24 06:38:57.386936"], ["updated_at", "2018-10-24 06:38:57.386936"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(2463861850951678800)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (3.9ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Haram"], ["password_digest", "$2a$10$ZuGk5c7EJCRMYtuBY24tB.xNOfT8fJg5iaI1UwtR7EElQPXqY974e"], ["session_token", "TNyGUHtDheud95ESJ627fg"], ["created_at", "2018-10-24 07:04:17.492690"], ["updated_at", "2018-10-24 07:04:17.492690"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (11.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "sera"], ["password_digest", "$2a$10$wYLrRnAft40rPY5/bZ7v2entqJxMHCB5Wggb7Po37GL2CZknZfs/6"], ["session_token", "mKTpTPvkhU8CXiRnVVTGRQ"], ["created_at", "2018-10-24 07:29:05.284952"], ["updated_at", "2018-10-24 07:29:05.284952"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (2.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "hosik"], ["password_digest", "$2a$10$fnqOWg4SUL07FB130fJXOeh/lXnNznpqro7BQ4WlAlJO10ESTedyS"], ["session_token", "ZMZT6wWhI1KYX6dtO4qSMg"], ["created_at", "2018-10-24 07:32:40.891729"], ["updated_at", "2018-10-24 07:32:40.891729"]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "ljdf"], ["password_digest", "$2a$10$.kO.qwWbJ4P9v0KgqF5.e.xK/PQY/QFXLhj59tKOFcNG/613dbHKa"], ["session_token", "zTv6WjKOdtyIn654CyS7pA"], ["created_at", "2018-10-24 07:33:46.070834"], ["updated_at", "2018-10-24 07:33:46.070834"]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (2.8ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "woo"], ["password_digest", "$2a$10$7M3.xgakjdBUk3pCstyWveJyJKQnwqPeIuNps/IT1Rt5Yg6n42aTW"], ["session_token", "YwDVN4lqa59DGM5Vth1BLg"], ["created_at", "2018-10-24 07:39:01.166881"], ["updated_at", "2018-10-24 07:39:01.166881"]]
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "moon"], ["password_digest", "$2a$10$pxNklMebR6m4HztbFMO2DuCQh3jzC4RVFenfzchiYQTDFs.mCdztK"], ["session_token", "UIOQZ-MtDomqjgbFKyjOEg"], ["created_at", "2018-10-24 07:41:25.948218"], ["updated_at", "2018-10-24 07:41:25.948218"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Create (2.1ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "0000"], ["password_digest", "$2a$10$CxJ5VK5gW/58pp.wZum3nOv7PChtuoU8/FY58.nkfH5J2yFXPAMN6"], ["session_token", "WXdz4A56STy2CAFyo8yIOQ"], ["created_at", "2018-10-24 07:43:17.490089"], ["updated_at", "2018-10-24 07:43:17.490089"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (5.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "M0gBtuo1kDi--zPTzTlZRA"], ["updated_at", "2018-10-24 07:43:21.284563"], ["id", 7]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Update (10.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "UICqs1K1kl6TjO3pMD5hUA"], ["updated_at", "2018-10-24 07:43:27.527476"], ["id", 7]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
