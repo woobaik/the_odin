@@ -174,3 +174,209 @@ Completed 200 OK in 2118ms (Views: 2076.0ms | ActiveRecord: 12.4ms)
   [1m[36mUser Create (4.8ms)[0m  [1m[32mINSERT INTO "users" ("password_digest", "session_token", "username", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["password_digest", "$2a$10$v4qYu2WytLBWN8wCc0glTux74.yJw.sWnUq8k3vXydAY0MTgzoiq6"], ["session_token", "zQhggyuHuum59cN25fPmmg"], ["username", "haram"], ["created_at", "2018-10-24 18:45:39.243411"], ["updated_at", "2018-10-24 18:45:39.243411"]]
   [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "haram"], ["LIMIT", 1]]
+Started GET "/cats" for 127.0.0.1 at 2018-10-24 12:36:55 -0700
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/joungwoo/.rvm/gems/ruby-2.3.4/gems/activerecord-5.2.1/lib/active_record/log_subscriber.rb:98
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (4.9ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:4
+  Rendered cats/index.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 793ms (Views: 748.5ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2018-10-24 12:37:04 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError - syntax error, unexpected tLABEL, expecting keyword_end
+...ppend=  form_for(:session) url: "/session" do |f| @output_bu...
+...                               ^
+/Users/joungwoo/Desktop/project/the_odin/rails/99cats/app/views/sessions/new.html.erb:2: syntax error, unexpected keyword_do, expecting keyword_end
+...or(:session) url: "/session" do |f| @output_buffer.safe_appe...
+...                               ^
+/Users/joungwoo/Desktop/project/the_odin/rails/99cats/app/views/sessions/new.html.erb:13: syntax error, unexpected keyword_ensure, expecting end-of-input:
+  app/views/sessions/new.html.erb:2:in `'
+
+Started POST "/__better_errors/fe8120b94cf9f225/variables" for 127.0.0.1 at 2018-10-24 12:37:05 -0700
+Started GET "/session/new" for 127.0.0.1 at 2018-10-24 12:37:30 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (864.6ms)
+Completed 200 OK in 1115ms (Views: 1081.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2018-10-24 12:37:38 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 198ms (Views: 193.0ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (4.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "haram"], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "Y8fsZb5hLbi6E_Ku_t-mNA"], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Update (7.1ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Y8fsZb5hLbi6E_Ku_t-mNA"], ["updated_at", "2018-10-24 19:42:14.035261"], ["id", 2]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (13.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "haram"], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "KNrKIxY-uuSdrrMJzqkSsQ"], ["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "KNrKIxY-uuSdrrMJzqkSsQ"], ["updated_at", "2018-10-24 19:42:28.259625"], ["id", 2]]
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/session/new" for 127.0.0.1 at 2018-10-24 12:43:36 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 238ms (Views: 231.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2018-10-24 12:43:42 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4EoAYXRsE0TmTaaxOVGUi+5zqQhhozkC09sZld4cZgLc7rrXQJ034W5hRZs/CpN9Zf2iL2/UKdqayeV9cbSPGg==", "session"=>{"username"=>"haram", "password"=>"[FILTERED]"}, "commit"=>"Save Session"}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 712ms (ActiveRecord: 24.4ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2018-10-24 12:44:29 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 382ms (Views: 241.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2018-10-24 12:44:50 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Eooy7gxSVcWu9udqCeDSw2Zmp79RlTWTYS/OUKRchbwuLohYOKNxYCbaBEAPu9U17eismF/iJUsoPTK4C/RspA==", "session"=>{"username"=>"haram", "password"=>"[FILTERED]"}, "commit"=>"Save Session"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 425ms (ActiveRecord: 17.9ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2018-10-24 12:45:08 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 252ms (Views: 245.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2018-10-24 12:45:14 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Iu0JWKzTXXpKIp1n8xUZEGdVWmFwGl8Ef+AQdCXr9qkeSbPumCJ538IOfk31Th7m7NtRRn5tT9w28uycikMfsQ==", "session"=>{"username"=>"haram", "password"=>"[FILTERED]"}, "commit"=>"Save Session"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:7
+No template found for SessionsController#create, rendering head :no_content
+Completed 204 No Content in 678ms (ActiveRecord: 34.4ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2018-10-24 12:49:27 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 106ms (Views: 102.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/session/new" for 127.0.0.1 at 2018-10-24 12:49:42 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 78ms (Views: 72.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2018-10-24 12:49:49 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gmBgI3ACnHNg3494T2YQM/VqWJTuYe4gNCNmRokQpKu+xNqVRPO41ujzbFJJPRfFfuRTs+AW/vh9MZquJrhNsw==", "session"=>{"username"=>"haram", "password"=>"[FILTERED]"}, "commit"=>"Save Session"}
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `[]' for nil:NilClass:
+  app/controllers/sessions_controller.rb:7:in `create'
+
+Started POST "/__better_errors/1f014f8590ac68a4/variables" for 127.0.0.1 at 2018-10-24 12:49:49 -0700
+Started POST "/session" for 127.0.0.1 at 2018-10-24 12:50:25 -0700
+
+SyntaxError - syntax error, unexpected ':', expecting ')'
+...er.find_by_credential(params[]:username], params[:password])
+...                               ^
+/Users/joungwoo/Desktop/project/the_odin/rails/99cats/app/controllers/sessions_controller.rb:7: syntax error, unexpected ')', expecting keyword_end:
+  app/controllers/sessions_controller.rb:7:in `'
+
+Started POST "/__better_errors/265e3bed700f7608/variables" for 127.0.0.1 at 2018-10-24 12:50:27 -0700
+Started GET "/session/new" for 127.0.0.1 at 2018-10-24 12:50:29 -0700
+
+SyntaxError - syntax error, unexpected ':', expecting ')'
+...er.find_by_credential(params[]:username], params[:password])
+...                               ^
+/Users/joungwoo/Desktop/project/the_odin/rails/99cats/app/controllers/sessions_controller.rb:7: syntax error, unexpected ')', expecting keyword_end:
+  app/controllers/sessions_controller.rb:7:in `'
+
+Started POST "/__better_errors/16f1ea007ab4806d/variables" for 127.0.0.1 at 2018-10-24 12:50:29 -0700
+Started GET "/session/new" for 127.0.0.1 at 2018-10-24 12:50:38 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 149ms (Views: 142.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2018-10-24 12:50:42 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sVMtD39fxIQeCLWOhWx+fAnvjdikHQjtMriCf4p1OYCN95e5S67gIZYkVqSDN3mKgmGG/6pqGDV7qn6XJd3QmA==", "session"=>{"username"=>"haram", "password"=>"[FILTERED]"}, "commit"=>"Save Session"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/user.rb:33
+Completed 200 OK in 25ms (Views: 0.2ms | ActiveRecord: 6.6ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2018-10-24 12:51:05 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sVMtD39fxIQeCLWOhWx+fAnvjdikHQjtMriCf4p1OYCN95e5S67gIZYkVqSDN3mKgmGG/6pqGDV7qn6XJd3QmA==", "session"=>{"username"=>"haram", "password"=>"[FILTERED]"}, "commit"=>"Save Session"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `[]' for nil:NilClass:
+  app/controllers/sessions_controller.rb:7:in `create'
+
+Started POST "/__better_errors/b8cc3a81d36429f1/variables" for 127.0.0.1 at 2018-10-24 12:51:05 -0700
+Started GET "/session/new" for 127.0.0.1 at 2018-10-24 12:51:35 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 93ms (Views: 88.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/session" for 127.0.0.1 at 2018-10-24 12:51:39 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j44UgTfKMUmlS48KgWEMhkM0GiUEjMZau1ab0iD3JQKzKq43AzsV7C1nbCCHOgtwyLoRAgr71oLyRGc6j1/MGg==", "session"=>{"username"=>"haram", "password"=>"[FILTERED]"}, "commit"=>"Save Session"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "haram"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:33
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "haram"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "BI0nkF9DoHWizSjZmi5VGw"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:40
+  [1m[36mUser Update (3.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "BI0nkF9DoHWizSjZmi5VGw"], ["updated_at", "2018-10-24 19:51:39.559120"], ["id", 2]]
+  ↳ app/models/user.rb:40
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:40
+Redirected to http://localhost:3000/cats
+Completed 302 Found in 160ms (ActiveRecord: 19.9ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2018-10-24 12:51:39 -0700
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (1.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  ↳ app/views/cats/index.html.erb:4
+  Rendered cats/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 46ms (Views: 35.3ms | ActiveRecord: 4.4ms)
+
+

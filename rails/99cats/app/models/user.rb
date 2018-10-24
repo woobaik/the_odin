@@ -35,6 +35,11 @@ class User < ApplicationRecord
     return user if user.is_password?(password)
   end
 
+  def reset_session_token
+    self.session_token = self.class.generate_token
+    self.save
+  end
+
   private
   def ensure_session_token
     self.session_token ||= User.generate_token
