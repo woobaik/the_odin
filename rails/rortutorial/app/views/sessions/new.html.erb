@@ -1,0 +1,17 @@
+<% if flash.any? %>
+  <% flash.each do |k,v| %>
+    <%= v %>
+  <% end %>
+<% end %>
+
+<% if current_user %>
+Hello, <%= current_user.username %>!<br>
+Your Encrypt Token is <%= current_user.remember_digest%>
+<% end %>
+
+<h1>Log In</h1>
+<%= form_for(:session,  url: '/login') do |f| %>
+  <%= f.text_field :username, placeholder: "User Name" %><br>
+  <%= f.password_field :password, placeholder: "Password" %><br>
+  <%= f.submit "Log In"%>
+<% end %>
