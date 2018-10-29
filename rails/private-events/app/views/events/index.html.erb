@@ -1,0 +1,6 @@
+<h1>EVENT LIST</h1>
+<% @events.each do |event| %>
+  <ul>
+    <li> <%= link_to "#{event.event_name} : #{event.event_date.strftime("%F")}", event_path(event)%> </li>
+  </ul>
+<% end %>
