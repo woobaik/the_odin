@@ -1,0 +1,15 @@
+SEARCH FORM
+
+<%= form_tag('/', method: 'get') %>
+  <%= label_tag :from %>
+  <%= select_tag :from, options_for_select(@airports) %>
+
+  <%= label_tag :to %>
+  <%= select_tag :to, options_for_select(@airports) %><br>
+
+  <%= label_tag :number_passenger %>
+  <%= select_tag :number_passenger, options_for_select(@passenger) %><br>
+
+  <%= label_tag :flight_date %>
+  <%= select_tag "event_date", options_from_collection_for_select(UgradRsvp.get_event_dates, 'event_date', :event_date_formatted) %>
+  <%= submit_tag %>
