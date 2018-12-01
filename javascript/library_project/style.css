@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  padding: 0;
+
+}
+
+#header {
+  background-color: #5d96ea;
+}
+
+
+.title {
+  margin: 0;
+  padding: 15px;
+  text-align: center;
+  color: #3b1c1c;
+}
+
+.form {
+  margin: 10px;
+}
+
+
+
+
+.form-input {
+  margin-bottom: 10px;
+}
