@@ -22,7 +22,7 @@ function addBookToLibrary(book) {
 function render() {
   for( let i = 0; i < myLibrary.length; i++ ) {
     const newBook = document.createElement('p');
-    const removeBtn = dodcument.createElement('button')
+    const removeBtn = document.createElement('button')
     newBook.innerHTML = `<li>${myLibrary[i].title}</li>`
     removeBtn.textContent = 'Remove'
     removeBtn.classList.add('removeBtn')

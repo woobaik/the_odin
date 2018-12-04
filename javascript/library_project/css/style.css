@@ -1,0 +1,28 @@
+
+/* ===============================
+
+colors :
+  light grey       #7A918D
+                   #BFC8AD
+  light purple     #545775
+  yellowish white  #F4FFF8
+  light peach:     #DBCFB0
+===================================
+*/
+
+.col-bg-blue {
+  background-color: #5d96ea;
+}
+
+/*===================================
+            preloader
+======================================*/
+#preloader {
+  background-color: red;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+}
