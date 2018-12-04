@@ -1,3 +1,7 @@
+$(window).on('load', function() {
+  $('#status').fadeOut();
+  $('#preloader').delay(350).fadeOut();
+});
 
 const shelf = document.querySelector('.shelf')
 const addBtn = document.querySelector('.addBtn')
