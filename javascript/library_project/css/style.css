@@ -1,5 +1,10 @@
 
 /* ===============================
+Default Theme
+-----------------------------------
+font: font-family: 'Bungee', cursive;
+font-family: 'Gloria Hallelujah', cursive;
+
 
 colors :
   light grey       #7A918D
@@ -10,9 +15,39 @@ colors :
 ===================================
 */
 
-.col-bg-blue {
-  background-color: #5d96ea;
+/* ====================================
+    HTML BODY
+    ====================================/ */
+
+html, body {
+  height: 100%;
 }
+
+body {
+  color: #7A918D;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Bungee', cursive, sans-serif;
+}
+
+p {
+  font-family: 'Courgette', cursive, sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+section {
+  background: #fff;
+  overflow: hidden;
+}
+
 
 /*===================================
             preloader
@@ -24,7 +59,7 @@ colors :
   bottom: 0;
   left: 0;
   right: 0;
-  z-index: 99999;
+  z-index: 9999;
 }
 
 
@@ -42,6 +77,22 @@ colors :
       Home
 =========================================/  */
 
+#home {
+  background: none;
+  height: 100%;
+}
+
+#home-content {
+  height: 100%;
+  width: 100%;
+  display: table;
+}
+
+#home-content-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
 #home-bg-video {
   position: fixed;
   top: 50%;
@@ -53,17 +104,54 @@ colors :
   width: auto;
   height: auto;
   z-index: -1;
-  background: url("../video/solo.jpg");
+  background: url("../video/solo.jpg") no-repeat;
   background-size: cover;
 }
 
 
 #home-overlay {
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0,0,0,0.75);
   height: 100%;
   width: 100%;
   position: fixed;
   top: 0;
   left: 0;
   z-index: -1;
+}
+
+#home-heading h1 {
+  color: #fff;
+  font-size: 65px;
+  font-weight: 100;
+  text-transform: uppercase;
+  margin: 0;
+  display: inline-block;
+}
+
+#home-heading h1 span {
+  color: #7A918D;
+  font-weight: 500;
+}
+
+#home-text p {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 100;
+  margin: 8px 5px 30px 5px;
+}
+
+/* ======================================
+      Button
+=========================================/  */
+
+.btn-general {
+  font-family: 'Bungee', cursive;
+  border-width: 4px;
+  border-radius: 20px;
+  color : #5bc0de;
+  background-color: white;
+  font-size: 10px;
+  margin: 10px 3px;
+  padding: 12px 46px;
+  transition: all .2s
 }
