@@ -179,7 +179,7 @@ section {
       Content Boxes
 =========================================/  */
 .content-box-lg {
-  padding: 50px 0;
+  padding: 40px 0;
 }
 
 /* ======================================
@@ -211,7 +211,9 @@ section {
       About
 =========================================/  */
 #about {
-  padding: 40px 0;
+  padding-top: 40px;
+  width: 100%;
+
 }
 
 #about-left {
@@ -236,10 +238,6 @@ section {
   position: relative;
 }
 
-#about-img {
-  background-image: linear-gradient(red, black;
-  );
-}
 
 #about-overlay {
   background-color: rgba(0, 0, 0, 0.9);
@@ -284,6 +282,10 @@ section {
   background-color: #545775;
 }
 
+.card-item:hover i {
+  transform: translateY(-5px);
+}
+
 .card-item-title p {
   font-family: 'Bungee';
   padding: 0;
@@ -297,6 +299,10 @@ section {
   transition: all 1s
 }
 
+.card-item i {
+  transition: all 1s
+}
+
 /*
 colors :
   light grey       #7A918D
@@ -307,3 +313,12 @@ colors :
   yellow     :     #f4C613;
   pink       :     #FFA0AC;
   blue       :     #457EAC; */
+
+
+  /* ======================================
+        Team
+  =========================================/  */
+
+#team-left-content {
+  margin-left: 12px;
+}
